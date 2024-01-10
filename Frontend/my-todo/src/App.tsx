@@ -1,6 +1,6 @@
 export default function MyApp() {
   return (
-    <div className="container py-2 mx-auto bg-yellow-200 mt-10  rounded-md  items-center justify-center flex gap-5 flex-col">
+    <div className="container py-2 mx-auto w-96 bg-yellow-200 mt-10  rounded-md  items-center justify-center flex gap-5 flex-col">
       <TodoInput />
       <TodoList />
     </div>
@@ -25,8 +25,8 @@ function TodoItem(props: { title: string }) {
     <div className="flex gap-2 py-1 px-2 justify-between">
       <p>{props.title}</p>
       <div className="flex gap-2">
-      <button className="bg-blue-300  px-1 rounded-sm" type="submit"> Edit </button>
-      <button className="bg-rose-300  px-1 rounded-sm" type="submit"> Delete </button>
+        <button className="bg-blue-300  px-1 rounded-sm" type="submit"> Edit </button>
+        <button className="bg-rose-300  px-1 rounded-sm" type="submit"> Delete </button>
       </div>
     </div>
 
