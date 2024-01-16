@@ -8,7 +8,7 @@ export function TodoItem(props: Readonly<{ id: any, title: string, isCompleted: 
         setTaskCompletedStatus(event.target.checked);
     }
     const deleteTask = (id: any) => {
-        let indexOfItemToDelete;
+        let indexOfItemToDelete = -1;
         for (let i = 0; i < props.todoList.length; i++) {
             if (props.todoList[i].id === id) {
                 indexOfItemToDelete = i;
@@ -16,7 +16,7 @@ export function TodoItem(props: Readonly<{ id: any, title: string, isCompleted: 
             }
         }
         let newTodoList = [...props.todoList,];
-        newTodoList.splice(indexOfItemToDelete, 1);
+        newTodoList.splice(indexOfItemToDelete, 1 );
         props.todoListChanger(newTodoList);
     }
 

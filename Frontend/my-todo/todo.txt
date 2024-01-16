@@ -1,2 +1,7 @@
+- add feature for Update todo list
 
 (Go for Backendend)
+
+
+- Refactoring in React
+- Learn best practices

@@ -5,8 +5,9 @@ export function TodoInput(props: Readonly<{ addhandler: any }>) {
     const [todoInput, setTodoInput] = useState("")
 
     const handleInputChange = (event: FormEvent) => {
-        console.log(event.target.value);
-        setTodoInput(event.target.value)
+        let inputEventValue = (event.target as HTMLInputElement).value
+        console.log("value ", inputEventValue);
+        setTodoInput(inputEventValue)
     }
 
 
