@@ -2,10 +2,10 @@ import { useState } from "react";
 
 
 
-export function TodoItem(props: { id: any, title: string, isCompleted: boolean, todoListChanger: any, todoList: any }) {
-    const [taskCompletedStatus, settaskCompletedStatus] = useState(props.isCompleted);
+export function TodoItem(props: Readonly<{ id: any, title: string, isCompleted: boolean, todoListChanger: any, todoList: any }>) {
+    const [taskCompletedStatus, setTaskCompletedStatus] = useState(props.isCompleted);
     const changeTaskCompletedStatus = (event: any) => {
-        settaskCompletedStatus(event.target.checked);
+        setTaskCompletedStatus(event.target.checked);
     }
     const deleteTask = (id: any) => {
         let indexOfItemToDelete;
@@ -15,10 +15,9 @@ export function TodoItem(props: { id: any, title: string, isCompleted: boolean, 
                 break;
             }
         }
-
-        props.todoList.splice(indexOfItemToDelete, 1);
-        console.log(props.todoList);
-        props.todoListChanger([...props.todoList]);
+        let newTodoList = [...props.todoList,];
+        newTodoList.splice(indexOfItemToDelete, 1);
+        props.todoListChanger(newTodoList);
     }
 
     return <li className="mt-2">
@@ -30,9 +29,7 @@ export function TodoItem(props: { id: any, title: string, isCompleted: boolean, 
             <div className="flex gap-2">
                 {
                     !taskCompletedStatus ? (
-                        <>
-                            <button className="bg-blue-300  px-2 rounded-lg" type="submit"> Edit </button>
-                        </>
+                        <button className="bg-blue-300  px-2 rounded-lg" type="submit"> Edit </button>
                     ) : null
                 }
                 <button className="bg-rose-300  px-2 rounded-lg" onClick={() => deleteTask(props.id)}> Delete</button>
