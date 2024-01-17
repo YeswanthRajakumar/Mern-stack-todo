@@ -31,13 +31,18 @@ export default function MyApp() {
     console.log("new list", todos);
   }
 
+  // function updateTodo(item: any) {
+
+  // }
+
+
 
   return (
     <>
       <p className="font-bold	text-center mt-10 text-4xl" > Yet another Todo 📝</p>
       <div className="container border-2 border-gray-800 py-2 mx-auto w-96 bg-yellow-200 mt-12  rounded-md  items-center justify-center flex gap-5 flex-col">
         <TodoInput addhandler={addTodo} />
-        <TodoList list={todos} />
+        <TodoList list={todos}  />
       </div>
     </>
 

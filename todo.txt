@@ -1,0 +1,12 @@
+(Backend)
+ - Db creation
+ - CRD api
+ - ORM
+ - Authentication
+
+(Others)
+- Unit testing
+- CI/CD
+- Deployment
+- Refactoring in React
+- Learn best practices in Node & React
